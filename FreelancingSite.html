@@ -22,7 +22,7 @@ position: relative;
 
 }
 
-h2:hover, h1:hover , table:hover{
+h2:hover, h1:hover ,{
 background-color:red;
 }
 
@@ -35,13 +35,37 @@ background-color:red;
 
 }
 </style>
+
+<script>
+function changeColor(){
+var h = document.getElementById("Color");
+h.style.color="blue";
+}
+function Colorblack(){
+var h = document.getElementById("Color");
+h.style.color="black";
+}
+
+function Submitted(){
+var x = document.getElementById("valid");
+if(x.value=="")
+{
+alert("please dont leave form empty");
+}
+else{
+alert("Submitted");
+}
+}
+
+
+</script>
 </head>
 <body bgcolor="lightgrey">
 <div id="mydiv"><font color="#800000"><h1 ><b>1.Upwork</b></h1></font></div>
 <div class="div"><img src="https://harsh41695.github.io/AssignmentRepo/Phot.jpg" border="5" color="red"></div>
 <hr size= "10" color = "lightgreen">
 
-<ul>
+<ul >
 <font size=5%>
 <li ><b>Freelancing type:</b> brand marketing, programming, website design</li>
 <li><b>Pros: </b>payment protection, credible clients, budget-based projects</li>
@@ -49,7 +73,7 @@ background-color:red;
 </ul >
 </font>
 
-<p align="center"><!--Css SIze------>
+<p align="center"  id="Color" onmouseover="changeColor()" onmouseout="Colorblack()"><!--Css SIze------>
 <font Color = "green" size="6%">Upwork</font> <font size="5%">is a freelancing website that connects clients and freelancers from across the globe. <br ><br>
 The platform provides a wide range of categories, from web design and software development to customer service and accounting.<br> <br>
 
@@ -69,26 +93,27 @@ There are several options for withdrawal, including direct transfer, PayPal, and
 
 <h2 align="center">Register Here</h2>
 <table cellpadding = "5" align="center" border="5 " bgcolor="lightgreen"> 
+<form>
 <tr>
 <td>
 Name:<br>
-<input type="text" >
+<input type="text" pattern="[A-Za-z]{0-10}" title="first letter sholud be capital">
 </td>
 <td>
 
 LastName:<br>
-<input type="text" >
+<input type="text" pattern="[A-Za-z]{0-10}" title="first letter sholud be capital" >
 </td>
 </tr>
 
 <tr >
 <td>
 Contact no.:<br>
-<input type ="text" >
+<input type ="text" pattern="[0-9]{10}" title="please enter only number">
 </td>
 <td>
 Email:<br>
-<input type ="text">
+<input type ="text" pattern=[A-z 0-9 a-z] id="valid" title="XYZ@gmail.com">
 </td>
 </tr>
 
@@ -105,11 +130,18 @@ Gender:<br>
 <input type = "radio" name="gender">other
 </td>
 </tr>
+<tr>
+<td>
+<input type= "Checkbox" >Are u 18 above
+</td>
+</tr>
+
 
 
 <tr>
-<td><input type = "submit"></td>
+<td><input type = "submit"  onclick="Submitted()" ></td>
 </tr>
+</form>
 </table>
 <a href="https://yadavharshu595.wixsite.com/myfportfolio"><font size="20" text-align="left"> MyPorfolio</font></a>
 </body>
